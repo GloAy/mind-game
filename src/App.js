@@ -44,7 +44,6 @@ function App() {
     let newuserInputs = newGuessInputs.playerInput;
     let copyData = [...data];
 
-    //console.log("wtf", guessInput.playerInput);
     if (guessInput.playerInput.length < 4) {
       newuserInputs.push(num);
       setGuessInput(newGuessInputs);
@@ -56,7 +55,7 @@ function App() {
       newuserInputs.forEach((num, i) => {
         if (copyData.includes(num)) {
           newGuessInputs.valueMatch++;
-          //
+
           copyData[copyData.indexOf(num)] = null; //set the element in that
         }
       });
@@ -76,6 +75,12 @@ function App() {
     numberOfAttempts++;
 
     //if the player attemps 10 times and the value is not equal to 4
+    console.log("this is number of attempts", numberOfAttempts);
+    console.log(
+      "this is in the click function - begin ",
+      guessInput.playerInput
+    );
+
     if (
       numberOfAttempts === MAX_ALLOWED_GUESSES &&
       guessInput.valueMatch !== GUESS_SIZE
@@ -91,36 +96,39 @@ function App() {
     let newHistory = [...history, guessInput];
     console.log("new history", newHistory);
 
-    if (guessInput.userInput.length === GUESS_SIZE) {
+    console.log("this is in the click function", guessInput.playerInput);
+    if (guessInput.playerInput.length === GUESS_SIZE) {
       setHistory(newHistory);
       setAttempt(numberOfAttempts);
-      handleClearClick();
+      //handleClearClick();
     }
+    //console.log("new history", newHistory);
   };
 
   const handleStartNewGame = () => {
     let newGameState = {
       guessInputs: {
-        userInput: [],
+        playerInput: [],
         indexMatch: 0,
         valueMatch: 0,
       },
       history: [],
       attempts: 0,
     };
-    setGuessInput(
-      newGameState.guessInputs,
-      newGameState.history,
-      newGameState.attempts
-    );
+
+    setGuessInput(newGameState.guessInputs);
+    setHistory(newGameState.history);
+    setAttempt(newGameState.attempts);
   };
 
   const handleClearClick = () => {
     let resetObj = {
-      userInput: [],
+      playerInput: [],
       indexMatch: 0,
       valueMatch: 0,
     };
+
+    // console.log("reset object", resetObj);
     setGuessInput(resetObj);
   };
 
@@ -149,7 +157,8 @@ function App() {
           Clear The Board
         </Button>{" "}
         <Button
-          variant="hints"
+          variant="submit"
+          onClick={() => handleSubmitClick()}
           style={{
             background: "#FCC108",
             width: "90px",
@@ -157,6 +166,7 @@ function App() {
             borderradius: "50%",
           }}
         >
+          {" "}
           Submit
         </Button>{" "}
       </div>
@@ -173,7 +183,6 @@ function App() {
       </div>
       <Board
         data={data}
-        handleClick={handleSubmitClick}
         playerInput={guessInput.playerInput}
         history={history}
         handleColorClick={handleColorClick}

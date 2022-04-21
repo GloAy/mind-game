@@ -7,7 +7,7 @@ const Buttons = ({ handleColorClick }) => {
       <ButtonGroup size="lg" className="mb-2">
         <Button
           className="buttons"
-          style={{ background: "blue", width: "50px" }}
+          style={{ background: "#FF6347", width: "50px" }}
           onClick={() => handleColorClick("0")}
         >
           0

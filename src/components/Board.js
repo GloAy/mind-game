@@ -5,24 +5,14 @@ import colors from "./Colors";
 //you have the color picker
 //different components
 
-const Board = ({
-  data,
-  handleColorClick,
-  handleSubmitClick,
-  playerInput,
-  history,
-  handleClearClick,
-}) => {
+const Board = ({ data, handleColorClick, playerInput, history }) => {
   //the first one was i was not passing the function properly
   //i was using the class component state
-  console.log("this is", playerInput);
-  //console.log("this is colors", colors);
-  //console.log("this is history", history);
 
   return (
     <div className="board">
       {/* <div className="row">{data}</div> */}
-      <div className="guessed-circles">
+      <div className="guessed-stars">
         {/*  */}
         {history.map((obj, i) => {
           return (
@@ -40,11 +30,12 @@ const Board = ({
           );
         })}
       </div>
-      <div className="color-circles">
-        {playerInput.map((num, i) => {
-          console.log("this is colors[num]", colors[num]);
-          return <span key={i}>{colors[num]}</span>;
-        })}
+      <div className="color-stars">
+        <p>
+          {playerInput.map((num, i) => {
+            return <span key={i}>{colors[num]}</span>;
+          })}
+        </p>
       </div>
       <div className="menu">
         <Buttons handleColorClick={handleColorClick} />

@@ -51,6 +51,19 @@ code {
   border-radius: 6px;
 }
 
+.buttons {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04aa6d;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 9px #999;
+}
+
 /* .new-game {
   height: 90px;
   width: 90px;
@@ -119,8 +132,11 @@ code {
   cursor: pointer;
 }
 
-/* .mb-2 {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-} */
+.scores {
+  background-color: whitesmoke;
+  font-size: 25px;
+  font-family: "Copperplate";
+  border: 2px solid gray;
+  padding-left: 10px;
+  padding-right: 10px;
+}

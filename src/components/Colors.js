@@ -1,50 +1,55 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/fontawesome-free-regular";
 
 const colors = {
   0: (
-    <i className="fas fa-bomb" style={{ color: "blue", fontSize: "40px" }}></i>
+    <FontAwesomeIcon
+      icon={faStar}
+      style={{ color: "#FF6347", fontSize: "40px" }}
+    />
   ),
   1: (
-    <i
-      className="fas fa-bomb"
+    <FontAwesomeIcon
+      icon={faStar}
       style={{ color: "#DD7371", fontSize: "40px" }}
-    ></i>
+    />
   ),
   2: (
-    <i
-      className="fas fa-bomb"
+    <FontAwesomeIcon
+      icon={faStar}
       style={{ color: "#C17D7D", fontSize: "40px" }}
-    ></i>
+    />
   ),
   3: (
-    <i
-      className="fas fa-bomb"
+    <FontAwesomeIcon
+      icon={faStar}
       style={{ color: "#BAA0A1", fontSize: "40px" }}
-    ></i>
+    />
   ),
   4: (
-    <i
-      className="fas fa-bomb"
-      style={{ color: "#DD7371", fontSize: "40px" }}
-    ></i>
+    <FontAwesomeIcon
+      icon={faStar}
+      style={{ color: "#BAA0A1", fontSize: "40px" }}
+    />
   ),
   5: (
-    <i
-      className="fas fa-bomb "
+    <FontAwesomeIcon
+      icon={faStar}
       style={{ color: "#F5238E", fontSize: "40px" }}
-    ></i>
+    />
   ),
   6: (
-    <i
-      className="fas fa-bomb"
+    <FontAwesomeIcon
+      icon={faStar}
       style={{ color: "#F0BEBC", fontSize: "40px" }}
-    ></i>
+    />
   ),
   7: (
-    <i
-      className="fas fa-bomb"
+    <FontAwesomeIcon
+      icon={faStar}
       style={{ color: "#273558", fontSize: "40px" }}
-    ></i>
+    />
   ),
 };
 
