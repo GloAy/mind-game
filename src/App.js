@@ -100,7 +100,7 @@ function App() {
     if (guessInput.playerInput.length === GUESS_SIZE) {
       setHistory(newHistory);
       setAttempt(numberOfAttempts);
-      //handleClearClick();
+      handleClearClick();
     }
     //console.log("new history", newHistory);
   };
